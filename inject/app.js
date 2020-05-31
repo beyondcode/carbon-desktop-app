@@ -24,23 +24,23 @@
         document.getElementsByTagName('head')[0].appendChild(script);
     }
 
-    loadScript('//code.jquery.com/jquery-3.2.1.min.js', function () {
-         jQuery('#loadingContainer').remove();
-         jQuery('.toast').remove();
-         jQuery('header').remove();
-         jQuery('.header-content').remove();
-         jQuery('.login-button-container').remove();
-         jQuery('button:contains("Tweet")').remove()
-         jQuery('.export-row button:contains("Open")').remove()
-         jQuery('button:contains("Export")').on('click', function() {
+    loadScript('//code.jquery.com/jquery-3.2.1.min.js', jQuery(function ($) {
+         $('#loadingContainer').remove();
+         $('.toast').remove();
+         $('header').remove();
+         $('.header-content').remove();
+         $('.login-button-container').remove();
+         $('button:contains("Tweet")').remove()
+         $('.export-row button:contains("Open")').remove()
+         $('button:contains("Export")').on('click', function() {
              setTimeout(() => {
-                jQuery('.export-row button:contains("Open")').remove()
+                $('.export-row button:contains("Open")').remove()
             }, 50);
          });
-         jQuery('footer').empty().html(`
+         $('footer').empty().html(`
          	created by <a style="color: #F8E81C" href="https://twitter.com/carbon_app">@carbon_app</a> and <a style="color: #F8E81C" href="https://beyondco.de">Beyond Code</a>
      	`)
-    });
+    }));
 
 
 })();
